@@ -18,8 +18,7 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int);
 
-        std::string getName();
-        int getDamage();
+        void setHitPoints(unsigned int amount);
 
 };
 //when ClapTrap attacks, it causes its target to lose <attack damage> hit points;
