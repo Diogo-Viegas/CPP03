@@ -41,20 +41,20 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &obj)
 void ScavTrap::attack(const std::string& target)
 {
     if(_energyPoints <= 0 || _hitPoints <= 0)
-        std::cout << RED << "ScavTrap " << _name << " has insufficient hit points or energy to attack." << RESET << std::endl;
+        std::cout << RED << "ScavTrap " << _name << ": has insufficient hit points or energy to attack." << RESET << std::endl;
     else
     {
-        std::cout << RED << "ScavTrap " << _name << " attacks " << target << ", dealing " << _attackDamage << " damage." << RESET << std::endl;
+        std::cout << RED << "ScavTrap " << _name << ": attacks " << target << ", dealing " << _attackDamage << " damage." << RESET << std::endl;
         _energyPoints--;
     }
 }
 void ScavTrap::takeDamage(unsigned int amount)
 {
     if(_hitPoints <= 0)
-        std::cout << RED << "ScavTrap " << _name << " cannot take more damage (hit points are already 0)." << RESET << std::endl;
+        std::cout << RED << "ScavTrap " << _name << ": cannot take more damage (hit points are already 0)." << RESET << std::endl;
     else
     {
-        std::cout << RED << "ScavTrap " << _name << " took " << amount << " damage." << RESET << std::endl;
+        std::cout << RED << "ScavTrap " << _name << ": took " << amount << " damage." << RESET << std::endl;
         _hitPoints = _hitPoints - amount;
     }
     
@@ -63,10 +63,10 @@ void ScavTrap::takeDamage(unsigned int amount)
 void ScavTrap::beRepaired(unsigned int amount)
 {
     if(_energyPoints <= 0 || _hitPoints <= 0)
-        std::cout << RED << "ScavTrap " << _name << " has insufficient hit points or energy to repair." << RESET << std::endl;
+        std::cout << RED << "ScavTrap " << _name << ": has insufficient hit points or energy to repair." << RESET << std::endl;
     else
     {
-        std::cout << RED << "ScavTrap " << _name << " repaired " << amount << " hit points." << RESET << std::endl;
+        std::cout << RED << "ScavTrap " << _name << ": repaired " << amount << " hit points." << RESET << std::endl;
         setHitPoints(_hitPoints + amount);    
         _energyPoints--;
     }   
@@ -77,13 +77,13 @@ void	ScavTrap::guardGate(void)
 	if (this->_openGate == false)
 	{
 		_openGate = true;
-		std::cout << RED << "ScavTrap " << _name << " is now guarding the gate." << RESET << std::endl;
+		std::cout << RED << "ScavTrap " << _name << ": is now guarding the gate." << RESET << std::endl;
 	}
 	else
-		std::cout << RED << "ScavTrap " << _name << " is already guarding the gate." << RESET << std::endl;
+		std::cout << RED << "ScavTrap " << _name << ": is already guarding the gate." << RESET << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << RED << "ScavTrap: destructor called for '" << _name << "'." << RESET << std::endl;
+    std::cout << RED << "ScavTrap "<< _name << ": Destructor called"<< RESET << std::endl;
 }
