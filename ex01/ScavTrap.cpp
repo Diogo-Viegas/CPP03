@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap():ClapTrap()
 {
-    std::cout << "| ScavTrap | -> Default constructor called" << std::endl;
+    std::cout << RED << "ScavTrap: default constructed." << RESET << std::endl;
     _name = "No name";
     _hitPoints = 100;
     _energyPoints = 50;
@@ -12,7 +12,7 @@ ScavTrap::ScavTrap():ClapTrap()
 
 ScavTrap::ScavTrap(std::string name):ClapTrap()
 {
-    std::cout << "| ScavTrap | -> Name constructor called" << std::endl;
+    std::cout << RED << "ScavTrap: constructed with name '" << name << "'." << RESET << std::endl;
     _name = name;
     _hitPoints = 100;
     _energyPoints = 50;
@@ -21,12 +21,12 @@ ScavTrap::ScavTrap(std::string name):ClapTrap()
 }
 ScavTrap::ScavTrap(const ScavTrap &obj):ClapTrap()
 {
-    std::cout << "| ScavTrap | -> Copy constructor called " << std::endl;
+    std::cout << RED<< "ScavTrap: copy constructed from '" << obj._name << "'." << RESET<< std::endl;
     *this = obj;
 }
 ScavTrap& ScavTrap::operator=(const ScavTrap &obj)
 {
-    std::cout << "| ScavTrap | -> Copy assignment operator called" << std::endl;
+    std::cout << RED << "ScavTrap: assigned from '" << obj._name << "'." << RESET << std::endl;
     if(this != &obj)
     {
         _name = obj._name;
@@ -41,10 +41,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &obj)
 void ScavTrap::attack(const std::string& target)
 {
     if(_energyPoints <= 0 || _hitPoints <= 0)
-        std::cout << "ScavTrap doesn't have hit or energy points" << std::endl;
+        std::cout << RED << "ScavTrap " << _name << " has insufficient hit points or energy to attack." << RESET << std::endl;
     else
     {
-        std::cout << "ScavTrap "<< _name << " attacks " << target <<" causing "  << _attackDamage <<  " points of damage" << std::endl;
+        std::cout << RED << "ScavTrap " << _name << " attacks " << target << ", dealing " << _attackDamage << " damage." << RESET << std::endl;
         _energyPoints--;
     }
 }
@@ -53,12 +53,12 @@ void	ScavTrap::guardGate(void)
 	if (this->_openGate == false)
 	{
 		_openGate = true;
-		std::cout << "ScavTrap " << this->_name << " is now guarding the gate." << std::endl;
+		std::cout << RED << "ScavTrap " << _name << " is now guarding the gate." << RESET << std::endl;
 	}
 	else
-		std::cout << "ScavTrap " << this->_name << " is already guarding the gate.\033[0m" << std::endl;
+		std::cout << RED << "ScavTrap " << _name << " is already guarding the gate." << RESET << std::endl;
 }
 ScavTrap::~ScavTrap()
 {
-    std::cout << "| ScavTrap | -> Name constructor called" << std::endl;
+    std::cout << RED << "ScavTrap: destructor called for '" << _name << "'." << RESET << std::endl;
 }

@@ -1,6 +1,11 @@
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 #include <iostream>
+#define RESET   "\033[0m"
+#define RED "\033[31m"
+#define GREEN   "\033[32m"
+#define AMARELO "\033[33m"
+#define AZUL    "\033[34m"
 class ClapTrap
 {
     protected:
