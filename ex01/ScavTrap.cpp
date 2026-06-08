@@ -10,10 +10,9 @@ ScavTrap::ScavTrap():ClapTrap()
     _openGate = false;
 }
 
-ScavTrap::ScavTrap(std::string name):ClapTrap()
+ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
-    std::cout << RED << "ScavTrap: constructed with name '" << name << "'." << RESET << std::endl;
-    _name = name;
+    std::cout << RED << "ScavTrap-> constructed with name '" << name << "'." << RESET << std::endl;
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -21,12 +20,12 @@ ScavTrap::ScavTrap(std::string name):ClapTrap()
 }
 ScavTrap::ScavTrap(const ScavTrap &obj):ClapTrap()
 {
-    std::cout << RED<< "ScavTrap: copy constructed from '" << obj._name << "'." << RESET<< std::endl;
+    std::cout << RED<< "ScavTrap-> copy constructed from '" << obj._name << "'." << RESET<< std::endl;
     *this = obj;
 }
 ScavTrap& ScavTrap::operator=(const ScavTrap &obj)
 {
-    std::cout << RED << "ScavTrap: assigned from '" << obj._name << "'." << RESET << std::endl;
+    std::cout << RED << "ScavTrap-> assigned from '" << obj._name << "'." << RESET << std::endl;
     if(this != &obj)
     {
         _name = obj._name;
@@ -60,5 +59,5 @@ void	ScavTrap::guardGate(void)
 }
 ScavTrap::~ScavTrap()
 {
-    std::cout << RED << "ScavTrap: destructor called for '" << _name << "'." << RESET << std::endl;
+    std::cout << RED << "ScavTrap -> destructor called for '" << _name << "'." << RESET << std::endl;
 }

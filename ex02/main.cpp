@@ -3,19 +3,19 @@
 #include "FragTrap.hpp"
 int main()
 {
-    ClapTrap A("Diogo");
-    A.attack("João");
-    ScavTrap a("António");
-    FragTrap C("John Cena");
-    a.guardGate();
+    ClapTrap A("A");
+    ScavTrap B("B");
+    FragTrap C("C");
+    A.attack("B");
+    B.guardGate();
     A.beRepaired(50);
-    a.guardGate();
+    B.guardGate();
     A.takeDamage(1000);
     A.beRepaired(20);
-    a.beRepaired(1000);
-    a.attack("José");
+    B.beRepaired(1000);
+    B.attack("José");
     C.beRepaired(20);
     C.attack("Pikachu");
-    C.HighFiveGuys();
+    C.highFivesGuys();
     return (0);
 }

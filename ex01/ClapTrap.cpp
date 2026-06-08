@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << GREEN << "ClapTrap: default constructed." << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap-> default constructed." << RESET << std::endl;
     _name = "No name";
     _hitPoints = 10;
     _energyPoints = 10;
@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << GREEN << "ClapTrap: constructed with name '" << name << "'." << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap-> constructed with name '" << name << "'." << RESET << std::endl;
     _name = name;
     _hitPoints = 10;
     _energyPoints = 10;
@@ -19,12 +19,12 @@ ClapTrap::ClapTrap(std::string name)
 }
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-    std::cout << GREEN << "ClapTrap: copy constructed from '" << obj._name << "'." << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap-> copy constructed from '" << obj._name << "'." << RESET << std::endl;
     *this = obj;
 }
 ClapTrap& ClapTrap::operator=(const ClapTrap &obj)
 {
-    std::cout << GREEN << "ClapTrap: assigned from '" << obj._name << "'." << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap-> assigned from '" << obj._name << "'." << RESET << std::endl;
     if(this != &obj)
     {
         _name = obj._name;
@@ -77,5 +77,5 @@ void ClapTrap::setHitPoints(unsigned int amount)
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << GREEN << "ClapTrap: destructor called for '" << _name << "'." << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap-> destructor called for '" << _name << "'." << RESET << std::endl;
 }

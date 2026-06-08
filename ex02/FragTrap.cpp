@@ -2,17 +2,16 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-    std::cout << BLUE << "FragTrap - Default Constructor Called" << RESET << std::endl;
+    std::cout << BLUE << "FragTrap -> Default Constructor Called" << RESET << std::endl;
     _name = "no name";
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
 }
 
-FragTrap::FragTrap(const std::string name) : ClapTrap()
+FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 {
-    std::cout << BLUE << "FragTrap - Name Constructor Called" << RESET << std::endl;
-    _name = name;
+    std::cout << BLUE << "FragTrap -> Name Constructor Called" << RESET << std::endl;
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
@@ -20,13 +19,13 @@ FragTrap::FragTrap(const std::string name) : ClapTrap()
 
 FragTrap::FragTrap(const FragTrap &obj):ClapTrap()
 {
-    std::cout << BLUE<< "FragTrap " << _name << ": copy constructed from '" << obj._name << "'." << RESET<< std::endl;
+    std::cout << BLUE<< "FragTrap " << _name << "-> copy constructed from '" << obj._name << "'." << RESET<< std::endl;
     *this = obj;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap &obj)
 {
-    std::cout << BLUE << "FragTrap " << _name << ": assigned from '" << obj._name << "'." << RESET << std::endl;
+    std::cout << BLUE << "FragTrap " << _name << "-> assigned from '" << obj._name << "'." << RESET << std::endl;
     if(this != &obj)
     {
         _name = obj._name;
@@ -69,11 +68,11 @@ void FragTrap::beRepaired(unsigned int amount)
         _energyPoints--;
     }   
 }
-void FragTrap::HighFiveGuys()
+void FragTrap::highFivesGuys()
 {
     std::cout << BLUE << "FragTrap " << _name << " : GIVE ME FIVE, GUYS!" << RESET << std::endl;
 }
 FragTrap::~FragTrap()
 {
-    std::cout << BLUE << "FragTrap " << _name << ": Destructor Called" << RESET << std::endl;
+    std::cout << BLUE << "FragTrap " << _name << "-> Destructor Called" << RESET << std::endl;
 }

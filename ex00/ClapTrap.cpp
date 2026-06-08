@@ -60,9 +60,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    std::cout << _hitPoints << std::endl;
     if(_energyPoints <= 0 || _hitPoints <= 0)
-        std::cout << "Clap Trap doesn't have hit or energy points" << std::endl;
+        std::cout << "Clap Trap " << _name << " doesn't have hit or energy points" << std::endl;
     else
     {
         std::cout << "Clap Trap " << _name << " Repaired himself" << std::endl;
